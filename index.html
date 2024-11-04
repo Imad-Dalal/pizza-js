@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande de Pizza</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+<header>
+    <img src="Pizza03.jpg" width="100%" height="100px" alt="">
+</header>
+<main>
+    <section>
+        <h2>Formulaire de Commande</h2>
+        <form id="commandeForm">
+            <label for="nom">Nom du client:</label>
+            <input type="text" id="nom" required><br>
+            <!-- s,nbdjsdbk,s:s -->
+            <label for="adresse">Adresse du client:</label>
+            <input type="text" id="adresse" required><br>
+    
+            <label for="pizza">Choisissez vos pizzas:</label>
+            <select id="pizza">
+                <option value="P01">Pizza 4 fromages - 80DH</option>
+                <option value="P02">Pizza Viande Hachée - 120DH</option>
+                <option value="P03">Pizza Herbo - 75DH</option>
+                <option value="P04">Pizza Fruits de mer - 120DH</option>
+            </select><br>
+    
+            <label for="quantite">Quantité:</label>
+            <input type="number" id="quantite" min="1" max="10" value="1" required><br>
+            
+            <div class="btns">
+                <button type="button" onclick="ajouter()">Ajouter</button>
+                <button type="reset">Annuler</button>
+            </div>
+            
+    
+            <label>Mode de paiement:</label>
+            <input type="radio" id="carte" name="paiement" value="carte" checked onclick="gererPaiement()"> Carte Bancaire
+            <input type="radio" id="cheque" name="paiement" value="cheque" onclick="gererPaiement()"> Chèque<br><br>
+    
+            <label for="numCarte">Numéro de Carte Bancaire:</label>
+            <input type="text" id="numCarte" required><br>
+    
+            <button type="submit" onclick="envoyerCommande()">Envoyer</button>
+            <div class="total">Montant Total: <span id="total">0 DH</span></div>
+        </form>
+    </section>
+    
+    <section>
+        <h2>Articles Choisis</h2>
+        <table id="tableArticles">
+            <tr>
+                <th>Code Article</th>
+                <th>Désignation</th>
+                <th>Prix Unitaire</th>
+                <th>Quantité</th>
+                <th>Total</th>
+            </tr>
+        </table>
+        <button onclick="enregistrer()">Enregistrer</button>
+    </section>
+</main>
+
+
+<footer>
+    <p>&copy;  PIZZA HUT MAROC 2024/2025 </p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
